@@ -11,7 +11,6 @@ import com.clevertap.android.sdk.CleverTapAPI;
 import com.clevertap.android.sdk.displayunits.DisplayUnitListener;
 import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnit;
 import com.pushnotification.nativedisplay.nativedisplay;
-
 import java.util.ArrayList;
 
 
