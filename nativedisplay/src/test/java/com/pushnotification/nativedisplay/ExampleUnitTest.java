@@ -1,4 +1,4 @@
-package com.invictus.clevertapnativedisplay;
+package com.pushnotification.nativedisplay;
 
 import org.junit.Test;
 

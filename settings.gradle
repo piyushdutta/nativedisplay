@@ -1,2 +1,2 @@
-include ':app', ':clevertapnativedisplay'
+include ':app', ':clevertapnativedisplay', ':nativedisplay'
 rootProject.name='CleverTapNativeDisplayTemplate'

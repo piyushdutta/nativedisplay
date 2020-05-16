@@ -1,4 +1,4 @@
-package com.invictus.clevertapnativedisplay;
+package com.pushnotification.nativedisplay;
 
 import android.content.Context;
 
@@ -22,6 +22,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 
-        assertEquals("com.invictus.clevertapnativedisplay.test", appContext.getPackageName());
+        assertEquals("com.pushnotification.nativedisplay.test", appContext.getPackageName());
     }
 }
