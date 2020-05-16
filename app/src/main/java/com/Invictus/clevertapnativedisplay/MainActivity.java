@@ -1,6 +1,8 @@
 package com.Invictus.clevertapnativedisplay;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
 import android.app.NotificationManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements DisplayUnitListen
         // you will get display units here
         for (int i = 0; i <units.size() ; i++) {
             CleverTapDisplayUnit unit = units.get(i);
+            nativedisplay.setCurrentActivity(MainActivity.this);
             Log.d("units",units.get(0).toString() );
             if(!nativedisplay.isnativepayload(units,getApplicationContext()))
             {

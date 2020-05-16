@@ -1,12 +1,7 @@
 package com.pushnotification.nativedisplay;
 
-import android.app.AlertDialog;
-import android.graphics.Rect;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
@@ -36,17 +31,6 @@ public class RatingActivity extends AppCompatActivity
         }
 
         setContentView(R.layout.rating_layout);
-//        Rect displayRectangle = new Rect();
-//        Window window = RatingActivity.this.getWindow();
-//        window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
-//        final AlertDialog.Builder builder = new AlertDialog.Builder(RatingActivity.this,R.style.CustomAlertDialog);
-//        ViewGroup viewGroup = findViewById(android.R.id.content);
-//        View dialogView = LayoutInflater.from(RatingActivity.this).inflate(R.layout.rating_layout, viewGroup, false);
-//        dialogView.setMinimumWidth((int)(displayRectangle.width() * 1f));
-//        dialogView.setMinimumHeight((int)(displayRectangle.height() * 1f));
-//        builder.setView(dialogView);
-//        final AlertDialog alertDialog = builder.create();
-
 
         TextView title_alert, message_alert;
         final EditText comment;
