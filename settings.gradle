@@ -1,0 +1,2 @@
+include ':app', ':clevertapnativedisplay'
+rootProject.name='CleverTapNativeDisplayTemplate'
