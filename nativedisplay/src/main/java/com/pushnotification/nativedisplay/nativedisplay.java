@@ -5,6 +5,8 @@ import android.util.Log;
 import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnit;
 import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnitContent;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -19,12 +21,12 @@ public class nativedisplay{
 
 
         try {
-            Log.d("units_custome", units.get(0).getJsonObject().get("custom_kv").toString());
+            Log.d("units_custome", units.get(0).getCustomExtras().get("template"));
+            String template_1 = units.get(0).getCustomExtras().get("template").toString();
 
-            template = units.get(0).getJsonObject().get("custom_kv").equals("template");
-
-            if(template)
+            if(template_1.equalsIgnoreCase("true"))
             {
+                template =true;
                 String custom = "";
                 template = units.get(0).getJsonObject().get("custom_kv").equals("custom");
                 if(custom.equalsIgnoreCase("rating"))
@@ -33,7 +35,7 @@ public class nativedisplay{
                 }
                 else
                 {
-                    template = false ;
+                    return template;
                 }
 
             }
@@ -43,6 +45,5 @@ public class nativedisplay{
 
         return template;
 
-        //"custom_kv":{"custom ":"rating","title":"hello","message":"world","template":"true"}
     }
 }
