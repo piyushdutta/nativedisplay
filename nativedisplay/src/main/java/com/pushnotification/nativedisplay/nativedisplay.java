@@ -1,5 +1,7 @@
 package com.pushnotification.nativedisplay;
 
+import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
 import com.clevertap.android.sdk.displayunits.model.CleverTapDisplayUnit;
@@ -10,11 +12,12 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import static com.pushnotification.nativedisplay.DisplayLauncherActivity.callIntent;
+
+
 public class nativedisplay{
 
-
-
-    public static boolean isnativepayload(ArrayList<CleverTapDisplayUnit> units)
+    public static boolean isnativepayload(ArrayList<CleverTapDisplayUnit> units, Context context)
     {
         boolean template = false;
         String unitid = units.get(0).getUnitID();
@@ -32,6 +35,10 @@ public class nativedisplay{
                 if(custom.equalsIgnoreCase("rating"))
                 {
                     String title, message;
+                    title = units.get(0).getCustomExtras().get("title").toString();
+                    message = units.get(0).getCustomExtras().get("message").toString();
+                    callIntent(context, unitid,title,message);
+
                 }
                 else
                 {

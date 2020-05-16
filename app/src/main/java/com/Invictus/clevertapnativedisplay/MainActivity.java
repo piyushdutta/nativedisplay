@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements DisplayUnitListen
         for (int i = 0; i <units.size() ; i++) {
             CleverTapDisplayUnit unit = units.get(i);
             Log.d("units",units.get(0).toString() );
-            if(!nativedisplay.isnativepayload(units))
+            if(!nativedisplay.isnativepayload(units,getApplicationContext()))
             {
 
             }
