@@ -14,24 +14,34 @@ public class nativedisplay{
 
     public static boolean isnativepayload(ArrayList<CleverTapDisplayUnit> units)
     {
+        boolean template = false;
+        String unitid = units.get(0).getUnitID();
 
-        Log.d("units", units.get(0).toString());
 
-        ArrayList<CleverTapDisplayUnitContent> contents;
+        try {
+            Log.d("units_custome", units.get(0).getJsonObject().get("custom_kv").toString());
 
-        contents.addAll(unit.contents)
-        contents= units.get(0).getContents();
+            template = units.get(0).getJsonObject().get("custom_kv").equals("template");
 
-        Log.e("contents",contents.toString());
+            if(template)
+            {
+                String custom = "";
+                template = units.get(0).getJsonObject().get("custom_kv").equals("custom");
+                if(custom.equalsIgnoreCase("rating"))
+                {
+                    String title, message;
+                }
+                else
+                {
+                    template = false ;
+                }
 
-        //data.get("custom_kv")
+            }
 
-        for(int i =0 ; i< units.get(0).getCustomExtras().size();i++)
-        {
-            Log.e("native data",units.get(0).getUnitID());
-        }
+        }catch (Exception e)
+        {}
 
-        return false;
+        return template;
 
         //"custom_kv":{"custom ":"rating","title":"hello","message":"world","template":"true"}
     }
