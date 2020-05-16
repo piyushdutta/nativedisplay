@@ -35,31 +35,32 @@ public class RatingActivity extends AppCompatActivity
 
         }
 
-        Rect displayRectangle = new Rect();
-        Window window = RatingActivity.this.getWindow();
-        window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
-        final AlertDialog.Builder builder = new AlertDialog.Builder(RatingActivity.this,R.style.CustomAlertDialog);
-        ViewGroup viewGroup = findViewById(android.R.id.content);
-        View dialogView = LayoutInflater.from(RatingActivity.this).inflate(R.layout.rating_layout, viewGroup, false);
-        dialogView.setMinimumWidth((int)(displayRectangle.width() * 1f));
-        dialogView.setMinimumHeight((int)(displayRectangle.height() * 1f));
-        builder.setView(dialogView);
-        final AlertDialog alertDialog = builder.create();
+        setContentView(R.layout.rating_layout);
+//        Rect displayRectangle = new Rect();
+//        Window window = RatingActivity.this.getWindow();
+//        window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
+//        final AlertDialog.Builder builder = new AlertDialog.Builder(RatingActivity.this,R.style.CustomAlertDialog);
+//        ViewGroup viewGroup = findViewById(android.R.id.content);
+//        View dialogView = LayoutInflater.from(RatingActivity.this).inflate(R.layout.rating_layout, viewGroup, false);
+//        dialogView.setMinimumWidth((int)(displayRectangle.width() * 1f));
+//        dialogView.setMinimumHeight((int)(displayRectangle.height() * 1f));
+//        builder.setView(dialogView);
+//        final AlertDialog alertDialog = builder.create();
 
 
         TextView title_alert, message_alert;
         final EditText comment;
         final RatingBar rating;
 
-        title_alert = dialogView.findViewById(R.id.title);
-        message_alert = dialogView.findViewById(R.id.message);
-        comment = dialogView.findViewById(R.id.comments);
-         rating = dialogView.findViewById(R.id.ratingBar);
+        title_alert = findViewById(R.id.title);
+        message_alert = findViewById(R.id.message);
+        comment = findViewById(R.id.comments);
+         rating = findViewById(R.id.ratingBar);
 
         title_alert.setText(title);
         message_alert.setText(message);
 
-        Button buttonOk=dialogView.findViewById(R.id.submit);
+        Button buttonOk=findViewById(R.id.submit);
         final String finalUnitId = unitId;
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,10 +76,11 @@ public class RatingActivity extends AppCompatActivity
 
                 CleverTapAPI.getDefaultInstance(getApplicationContext()).pushEvent("Feedback Submited", prodViewedAction);
 
-                alertDialog.dismiss();
+                finish();
+                //alertDialog.dismiss();
             }
         });
-        alertDialog.show();
+        //alertDialog.show();
 
     }
 }

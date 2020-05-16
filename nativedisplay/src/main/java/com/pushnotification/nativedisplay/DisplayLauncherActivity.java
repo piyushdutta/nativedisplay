@@ -14,6 +14,7 @@ public class DisplayLauncherActivity extends AppCompatActivity {
         intent.putExtra("unitId",unitId1);
         intent.putExtra("title",title1);
         intent.putExtra("message",message1);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         context.startActivity(intent);
     }

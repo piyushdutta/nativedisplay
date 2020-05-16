@@ -26,12 +26,13 @@ public class nativedisplay{
         try {
             Log.d("units_custome", units.get(0).getCustomExtras().get("template"));
             String template_1 = units.get(0).getCustomExtras().get("template").toString();
-
+            Log.d("units_custome", units.get(0).getCustomExtras().toString());
             if(template_1.equalsIgnoreCase("true"))
             {
                 template =true;
-                String custom = "";
-                template = units.get(0).getJsonObject().get("custom_kv").equals("custom");
+
+                String custom = units.get(0).getCustomExtras().get("custom ");
+//                template = units.get(0).getJsonObject().get("custom_kv").equals("custom");
                 if(custom.equalsIgnoreCase("rating"))
                 {
                     String title, message;
@@ -48,7 +49,9 @@ public class nativedisplay{
             }
 
         }catch (Exception e)
-        {}
+        {
+            Log.d("what is this", e.toString());
+        }
 
         return template;
 
